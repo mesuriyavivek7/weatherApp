@@ -1,0 +1,118 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box{
+    max-width: 350px;
+    height: 500px;
+    border: .1rem solid #f5f5f5;
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color:#96EFFF;
+   -webkit-box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.75);;
+    overflow: hidden;
+}
+.box #weathericon{
+    max-width: 100%;
+    background: transparent;
+    height:55%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box #weathericon>i{
+   font-size: 3.5rem;
+   animation:topIcon 1s 1s infinite alternate;
+}
+.box .info{
+    background-color:#E0F4FF;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+.box .info .location{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.box .info .location>i{
+    font-size: 3rem;
+    animation: boxMove 2s infinite alternate;
+}
+.box .info .wave-one{
+    position: absolute;
+    background-color:#E0F4FF;
+    height: 350px;
+    width: 350px;
+    animation:rotateBox 5s linear infinite;
+    border-radius: 40%;
+    top: -2rem;
+    left: -4rem;
+    z-index: -1;
+}
+.box .info .wave-two{
+   position: absolute;
+   background-color:#F3F8FF;
+   height: 350px;
+   animation:rotateBox 4s linear infinite;
+   z-index: -2;
+   width: 350px;
+   border-radius: 40%;
+   top: -3rem;
+   left: 1rem;
+}
+.box .info .wave-three{
+    position: absolute;
+    background-color:#E0F4FF;
+    height: 350px;
+    animation:rotateBox 3s linear infinite;
+    z-index: -1;
+    width: 350px;
+    border-radius: 40%;
+    top:-2rem;
+    left: 4rem;
+}
+
+@keyframes boxMove {
+    from{
+        transform: translateX(-0.3rem);
+    }
+    to{
+        transform: translateX(0.3rem);
+    }
+}
+@keyframes topIcon {
+    from{
+        transform: scale(1.1);
+    }
+    to{
+        transform: scale(.8);
+    }
+    
+}
+@keyframes rotateBox {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
